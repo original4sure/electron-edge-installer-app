@@ -16,7 +16,15 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
-  
+  createWindow()
+  console.log(exec)
+  exec("Get-Process -Name electron", {'shell':'powershell.exe'}, (error, stdout, stderr)=> {
+      // do whatever with stdout
+      console.log(error, stdout, stderr)
+  })
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
 })
 
 //create backend-app
