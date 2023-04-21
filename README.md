@@ -1,1 +1,1 @@
-![alt text](./Electron-app-flow.png)
+![alt text](Electron-app-flow.png)
